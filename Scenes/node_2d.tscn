@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgq2sxa0w02nl"]
+
+[ext_resource type="Texture2D" uid="uid://bqlisa2spu8j3" path="res://Sprites/kirby-small.png" id="1_scrnu"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(550, 491)
+scale = Vector2(11.1111, 11.1111)
+texture = ExtResource("1_scrnu")
