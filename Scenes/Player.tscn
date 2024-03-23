@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4w1ktg8blxt6"]
+[gd_scene load_steps=5 format=3 uid="uid://c4w1ktg8blxt6"]
 
 [ext_resource type="Script" path="res://Scenes/CharacterBody2D.gd" id="1_rkpo7"]
 [ext_resource type="Texture2D" uid="uid://c3b6ahssdkd3c" path="res://Sprites/ghost.png" id="2_ygx5w"]
+[ext_resource type="PackedScene" uid="uid://d07a3jnhre3n2" path="res://Scenes/whisper_gun.tscn" id="3_luer3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwbbs"]
 size = Vector2(205.5, 179)
@@ -23,3 +24,6 @@ shape = SubResource("RectangleShape2D_wwbbs")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-2, 3)
 zoom = Vector2(0.75, 0.75)
+
+[node name="Whisper Gun" parent="." instance=ExtResource("3_luer3")]
+position = Vector2(41, -26)
