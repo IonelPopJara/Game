@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://jyg5dwj5xe7s"]
+[gd_scene load_steps=5 format=3 uid="uid://jyg5dwj5xe7s"]
 
 [ext_resource type="Texture2D" uid="uid://xex8qp4dqqbn" path="res://Sprites/palette.png" id="1_rn7yf"]
 [ext_resource type="PackedScene" uid="uid://c4w1ktg8blxt6" path="res://Scenes/Player.tscn" id="2_0babs"]
@@ -58,6 +58,5 @@ layer_0/tile_data = PackedInt32Array(262150, 0, 0, 262160, 0, 0, 262170, 0, 0, 2
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_0babs")]
 position = Vector2(1503, 488)
-
 [node name="Movable Block2" parent="." instance=ExtResource("3_5u8mb")]
 position = Vector2(942, 488)
