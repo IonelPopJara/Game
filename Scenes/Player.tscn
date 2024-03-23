@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/CharacterBody2D.gd" id="1_rkpo7"]
 [ext_resource type="Texture2D" uid="uid://j16w8iyg54px" path="res://Sprites/ghost-spritesheet.png" id="2_eujfl"]
-[ext_resource type="PackedScene" path="res://Scenes/whisper_gun.tscn" id="3_vnob7"]
+[ext_resource type="PackedScene" uid="uid://d07a3jnhre3n2" path="res://Scenes/whisper_gun.tscn" id="3_vnob7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwbbs"]
 size = Vector2(179, 196.5)
