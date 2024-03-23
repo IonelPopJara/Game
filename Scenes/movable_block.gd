@@ -1,6 +1,7 @@
 extends RigidBody2D
 class_name MovableBlock
 
+const MAX_SIZE = 2.0
 var move_up_speed = 100
 var move_up_duration = 2.0
 
@@ -12,9 +13,7 @@ func _ready():
 func _process(delta):
 	pass
 	
-func triggerBlock():
-	print("heyo this is a test mf")
-	
+func liftBlock():
 	# Deactivate gravity
 	gravity_scale = 0.0
 	# Apply upward velocity
@@ -24,3 +23,11 @@ func triggerBlock():
 	
 	# Stop the block
 	linear_velocity.y = 0
+	
+func pushBlock(direction):
+	apply_central_impulse(direction)
+	
+func growBlock():
+	if($Sprite2D.scale.x < MAX_SIZE):
+		$Sprite2D.scale *= 1.05
+		$CollisionShape2D.scale *= 1.05
