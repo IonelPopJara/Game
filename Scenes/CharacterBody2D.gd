@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal hit
+
 const SPEED = 600.0
 const JUMP_VELOCITY = -1000.0
 
@@ -36,3 +38,10 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func die():
+	hit.emit()
+	get_tree().reload_current_scene()
+
+func _on_kill_area_2d_body_entered(body):
+	die() # Replace with function body.
