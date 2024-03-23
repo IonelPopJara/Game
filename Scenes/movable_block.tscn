@@ -1,17 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkaua2vestj0o"]
+[gd_scene load_steps=5 format=3 uid="uid://dkaua2vestj0o"]
 
-[ext_resource type="Texture2D" uid="uid://5wei6tqnb8ok" path="res://Sprites/square.png" id="1_j1v81"]
 [ext_resource type="Script" path="res://Scenes/movable_block.gd" id="1_o4mst"]
+[ext_resource type="Texture2D" uid="uid://xex8qp4dqqbn" path="res://Sprites/palette.png" id="2_5frms"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tnxc"]
+atlas = ExtResource("2_5frms")
+region = Rect2(360, 0, 160, 160)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27jrk"]
+size = Vector2(51.8333, 52.4167)
 
 [node name="Movable Block" type="RigidBody2D"]
+position = Vector2(159, 162)
 script = ExtResource("1_o4mst")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(3, 3)
-texture = ExtResource("1_j1v81")
+position = Vector2(-162, -161)
+scale = Vector2(0.975, 0.9875)
+texture = SubResource("AtlasTexture_0tnxc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-161.75, -160.625)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_27jrk")
