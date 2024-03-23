@@ -15,4 +15,4 @@ func _on_area_entered(body):
 	# Check if the colliding body is the Sprite
 	#if body.name == "CharacterBody2D":
 		# Set moving_up flag to true to start moving up
-		moving_up = true
+	moving_up = true

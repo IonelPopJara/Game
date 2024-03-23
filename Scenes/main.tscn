@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7d6sn4uhglqm"]
+[gd_scene load_steps=11 format=3 uid="uid://b7d6sn4uhglqm"]
 
 [ext_resource type="Texture2D" uid="uid://bqlisa2spu8j3" path="res://Sprites/kirby-small.png" id="1_4ri5r"]
 [ext_resource type="Script" path="res://Scenes/Area2D.gd" id="4_0a75r"]
 [ext_resource type="PackedScene" uid="uid://d07a3jnhre3n2" path="res://Scenes/whisper_gun.tscn" id="4_7etm5"]
 [ext_resource type="Texture2D" uid="uid://5wei6tqnb8ok" path="res://Sprites/square.png" id="4_le01y"]
+[ext_resource type="PackedScene" uid="uid://dkaua2vestj0o" path="res://Scenes/movable_block.tscn" id="5_u3vyd"]
 
 [sub_resource type="GDScript" id="GDScript_c0mv6"]
 script/source = "extends CharacterBody2D
@@ -84,15 +85,18 @@ texture = ExtResource("4_le01y")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_22rqa")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Movable Box" type="Area2D" parent="."]
 position = Vector2(-6.10352e-05, 0)
 script = ExtResource("4_0a75r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Movable Box"]
 position = Vector2(985.5, 551.5)
 shape = SubResource("RectangleShape2D_71146")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Movable Box"]
 position = Vector2(988, 551)
 scale = Vector2(112.5, 108.5)
 texture = SubResource("PlaceholderTexture2D_321mj")
+
+[node name="Movable Block" parent="." instance=ExtResource("5_u3vyd")]
+position = Vector2(292, 549)
