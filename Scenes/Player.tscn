@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4w1ktg8blxt6"]
+[gd_scene load_steps=9 format=3 uid="uid://c4w1ktg8blxt6"]
 
 [ext_resource type="Script" path="res://Scenes/CharacterBody2D.gd" id="1_rkpo7"]
 [ext_resource type="Texture2D" uid="uid://j16w8iyg54px" path="res://Sprites/ghost-spritesheet.png" id="2_eujfl"]
@@ -36,10 +36,26 @@ tracks/0/keys = {
 "values": [0, 1, 0]
 }
 
+[sub_resource type="Animation" id="Animation_pl2tv"]
+resource_name = "whisper"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 3, 2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aoueu"]
 _data = {
 "RESET": SubResource("Animation_ytedp"),
-"idle": SubResource("Animation_vsck7")
+"idle": SubResource("Animation_vsck7"),
+"whisper": SubResource("Animation_pl2tv")
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
