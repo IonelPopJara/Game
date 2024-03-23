@@ -7,7 +7,10 @@ const JUMP_VELOCITY = -1000.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")*2
 
 func _process(delta):
-	$AnimationPlayer.play("idle")
+	if Input.is_action_pressed("fire"):
+		$AnimationPlayer.play("whisper")
+	else:
+		$AnimationPlayer.play("idle")
 
 func _physics_process(delta):
 	# Add the gravity.
