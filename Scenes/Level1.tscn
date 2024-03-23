@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://jyg5dwj5xe7s"]
 
 [ext_resource type="Texture2D" uid="uid://xex8qp4dqqbn" path="res://Sprites/palette.png" id="1_rn7yf"]
-[ext_resource type="PackedScene" path="res://Scenes/Player.tscn" id="2_0babs"]
-[ext_resource type="PackedScene" uid="uid://dkaua2vestj0o" path="res://Scenes/movable_block.tscn" id="3_5u8mb"]
+[ext_resource type="PackedScene" uid="uid://c4w1ktg8blxt6" path="res://Scenes/Player.tscn" id="2_0babs"]
+[ext_resource type="PackedScene" path="res://Scenes/movable_block.tscn" id="3_5u8mb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m285q"]
 resource_name = "atlas1"
