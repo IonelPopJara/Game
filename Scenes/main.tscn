@@ -1,10 +1,50 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7d6sn4uhglqm"]
+[gd_scene load_steps=7 format=3 uid="uid://b7d6sn4uhglqm"]
 
 [ext_resource type="Texture2D" uid="uid://bqlisa2spu8j3" path="res://Sprites/kirby-small.png" id="1_4ri5r"]
-[ext_resource type="Script" path="res://Scenes/CharacterBody2D.gd" id="1_5wyxh"]
+[ext_resource type="PackedScene" uid="uid://d07a3jnhre3n2" path="res://Scenes/whisper_gun.tscn" id="4_7etm5"]
+[ext_resource type="Texture2D" uid="uid://5wei6tqnb8ok" path="res://Sprites/square.png" id="4_le01y"]
+
+[sub_resource type="GDScript" id="GDScript_c0mv6"]
+script/source = "extends CharacterBody2D
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
+
+
+func _physics_process(delta):
+	# Add the gravity.
+	if not is_on_floor():
+		velocity.y += gravity * delta
+
+	# Handle jump (only if the character is on the floor!)
+	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		
+	# Flip the sprite based on the direction
+	if Input.is_action_pressed(\"move_left\"):
+		$Sprite2D.flip_h = true
+	elif Input.is_action_pressed(\"move_right\"):
+		$Sprite2D.flip_h = false
+
+	# Get the input direction and handle the movement/deceleration.
+	var direction = Input.get_axis(\"move_left\", \"move_right\")
+		
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwbbs"]
 size = Vector2(135, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22rqa"]
+size = Vector2(1172, 20)
 
 [node name="Node" type="Node"]
 
@@ -13,7 +53,7 @@ position = Vector2(590.556, 325)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(580, 315)
-script = ExtResource("1_5wyxh")
+script = SubResource("GDScript_c0mv6")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture_filter = 1
@@ -24,3 +64,16 @@ texture = ExtResource("1_4ri5r")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(6, 5)
 shape = SubResource("RectangleShape2D_wwbbs")
+
+[node name="Whisper Gun" parent="CharacterBody2D" instance=ExtResource("4_7etm5")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(599, 625)
+rotation = 0.00240056
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(58.2508, 1)
+texture = ExtResource("4_le01y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_22rqa")
