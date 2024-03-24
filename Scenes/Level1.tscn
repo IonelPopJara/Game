@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://jyg5dwj5xe7s"]
+[gd_scene load_steps=11 format=3 uid="uid://jyg5dwj5xe7s"]
 
 [ext_resource type="Texture2D" uid="uid://xex8qp4dqqbn" path="res://Sprites/palette.png" id="1_rn7yf"]
 [ext_resource type="PackedScene" uid="uid://c4w1ktg8blxt6" path="res://Scenes/Player.tscn" id="2_0babs"]
 [ext_resource type="PackedScene" uid="uid://dkaua2vestj0o" path="res://Scenes/movable_block.tscn" id="3_5u8mb"]
 [ext_resource type="PackedScene" uid="uid://dt1iawi0iswtg" path="res://Scenes/gravestone-checkpoint.tscn" id="4_dqbx7"]
+[ext_resource type="FontFile" uid="uid://cslq84cv1cvgq" path="res://Fonts/Stardew_Valley.ttf" id="5_kjklh"]
+[ext_resource type="Script" path="res://Scenes/Label.gd" id="6_itmqb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m285q"]
 resource_name = "atlas1"
@@ -52,6 +54,9 @@ sources/0 = SubResource("TileSetAtlasSource_m285q")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_56vta"]
 size = Vector2(13891.5, 863)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ff3kx"]
+size = Vector2(242, 306)
+
 [node name="Level1" type="Node2D"]
 position = Vector2(-26, 0)
 
@@ -83,4 +88,25 @@ shape = SubResource("RectangleShape2D_56vta")
 [node name="Gravestone" parent="." instance=ExtResource("4_dqbx7")]
 position = Vector2(3961, 492)
 
+[node name="PauseSign" type="Area2D" parent="."]
+position = Vector2(731, 515)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PauseSign"]
+position = Vector2(770, -101)
+shape = SubResource("RectangleShape2D_ff3kx")
+
+[node name="Pause" type="Label" parent="PauseSign"]
+offset_left = 554.0
+offset_top = -363.0
+offset_right = 1001.0
+offset_bottom = -242.0
+theme_override_fonts/font = ExtResource("5_kjklh")
+theme_override_font_sizes/font_size = 40
+text = "To exit/pause the game, press the Escape key."
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("6_itmqb")
+
 [connection signal="body_entered" from="KillArea2D" to="CharacterBody2D" method="_on_kill_area_2d_body_entered"]
+[connection signal="body_entered" from="PauseSign" to="PauseSign/Pause" method="_on_movement_sign_body_entered"]
+[connection signal="body_exited" from="PauseSign" to="PauseSign/Pause" method="_on_movement_sign_body_exited"]
