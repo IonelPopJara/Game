@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://da2pd6f26iges"]
+
+[ext_resource type="Texture2D" uid="uid://xex8qp4dqqbn" path="res://Sprites/palette.png" id="1_8qv4n"]
+[ext_resource type="Script" path="res://Scenes/gravestone-checkpoint.gd" id="1_fp4tr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix0ij"]
+atlas = ExtResource("1_8qv4n")
+region = Rect2(0, 363.466, 152.002, 156.534)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oumgr"]
+size = Vector2(132, 157)
+
+[node name="Gravestone" type="Area2D"]
+script = ExtResource("1_fp4tr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture = SubResource("AtlasTexture_ix0ij")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_oumgr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

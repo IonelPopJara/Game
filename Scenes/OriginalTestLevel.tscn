@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1hnathjx852f"]
+
+[ext_resource type="Texture2D" uid="uid://xex8qp4dqqbn" path="res://Sprites/palette.png" id="1_vatbb"]
+[ext_resource type="PackedScene" uid="uid://c4w1ktg8blxt6" path="res://Scenes/Player.tscn" id="2_ucfgo"]
+[ext_resource type="PackedScene" uid="uid://dkaua2vestj0o" path="res://Scenes/movable_block.tscn" id="3_wh5m0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m285q"]
+resource_name = "atlas1"
+texture = ExtResource("1_vatbb")
+separation = Vector2i(20, 20)
+texture_region_size = Vector2i(160, 160)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-80, -80, 80, -80, 80, 80, -80, 80)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-80, -80, 80, -80, 80, 80, -80, 80)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-80, -80, 80, -80, 80, 80, -80, 80)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-80, -80, 80, -80, 80, 80, -80, 80)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-80, -80, 80, -80, 80, 80, -80, 80)
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-52, 60, -20, 60, -20, 40, -40, 40, -40, 20, 40, 20, 40, 40, 20, 40, 20, 60, 52, 60, 52, 80, -52, 80)
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_1vl1t"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_m285q")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56vta"]
+size = Vector2(13891.5, 863)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-26, 0)
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-109, 579)
+tile_set = SubResource("TileSet_1vl1t")
+format = 2
+layer_0/tile_data = PackedInt32Array(262150, 0, 0, 262160, 0, 0, 262170, 0, 0, 262180, 0, 0, 262190, 0, 0, 262200, 0, 0, 262210, 0, 0, 262220, 0, 0, 262230, 0, 0, 262240, 0, 0, 262250, 0, 0, 262260, 0, 0, 262270, 0, 0, 327676, 0, 0, 327666, 0, 0, 327656, 0, 0, 983016, 65536, 0, 983026, 65536, 0, 983036, 65536, 0, 917510, 65536, 0, 917520, 65536, 0, 917530, 65536, 0, 917540, 65536, 0, 917550, 65536, 0, 917560, 65536, 0, 917570, 65536, 0, 917580, 65536, 0, 917590, 65536, 0, 917600, 65536, 0, 917610, 65536, 0, 917620, 65536, 0, 917630, 65536, 0, -393215, 65536, 1, -1048575, 65536, 1, -1703935, 65536, 1, -2359295, 65536, 1, -393099, 65536, 1, -1048459, 65536, 1, -1703819, 65536, 1, -2359179, 65536, 1, -2097162, 131072, 1, -2162685, 131072, 1, -2686985, 131072, 1, -2883577, 131072, 1, -2031622, 131072, 1, -1966077, 131072, 1, -2359283, 131072, 1, -2555907, 131072, 1, -3276797, 131072, 1, -3276810, 131072, 1, -3145731, 131072, 1, -3211251, 131072, 1, -2818032, 131072, 1, -2424851, 131072, 1, -2818064, 131072, 1, -3604481, 131072, 1, -3735540, 131072, 1, -3735546, 131072, 1, -2097141, 131072, 1, -2490362, 131072, 1, -2490371, 131072, 1, -3276820, 131072, 1, -3670025, 131072, 1, -2883606, 131072, 1, -3473423, 131072, 1, -3473392, 131072, 1, -2097040, 131072, 1, -2359187, 131072, 1, -2031498, 131072, 1, -1965966, 131072, 1, -2228101, 131072, 1, -2883476, 131072, 1, -2948995, 131072, 1, -2752397, 131072, 1, -3604367, 131072, 1, -2555785, 131072, 1, -2621325, 131072, 1, -2752381, 131072, 1, -3407765, 131072, 1, -3080076, 131072, 1, -3604356, 131072, 1, -3997589, 131072, 1, -4587408, 131072, 1, -4390791, 131072, 1, -4194190, 131072, 1, -3932031, 131072, 1, -3735431, 131072, 1, -3276668, 131072, 1, -393184, 0, 1, -1048544, 0, 1, -1703904, 0, 1, -2359264, 0, 1, -393167, 0, 1, -1048527, 0, 1, -1703887, 0, 1, -393200, 0, 2, -3014624, 65536, 2)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_ucfgo")]
+position = Vector2(1503, 488)
+
+[node name="Movable Block2" parent="." instance=ExtResource("3_wh5m0")]
+position = Vector2(942, 488)
+
+[node name="KillArea2D" type="Area2D" parent="."]
+position = Vector2(-4575, 1176)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillArea2D"]
+position = Vector2(5882, 334)
+shape = SubResource("RectangleShape2D_56vta")
+
+[connection signal="body_entered" from="KillArea2D" to="CharacterBody2D" method="_on_kill_area_2d_body_entered"]
