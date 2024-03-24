@@ -16,7 +16,7 @@ var elapsedTimeSinceLastTouchedFloor = 0.0
 func _init():
 	elapsedTimeSinceJump = MAX_JUMP_DELAY
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_pressed("fire"):
 		$AnimationPlayer.play("whisper")
 	else:
@@ -80,6 +80,7 @@ func die():
 	hit.emit()
 	get_tree().reload_current_scene()
 
-func _on_kill_area_2d_body_entered(body):
-	die() # Replace with function body.
+func _on_kill_area_2d_body_entered(_body):
+	call_deferred("die")
+	#die() # Replace with function body.
 

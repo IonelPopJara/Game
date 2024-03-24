@@ -11,7 +11,7 @@ func _ready():
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("whisper_1"):
 		selected_whisper = 1
 	if Input.is_action_just_pressed("whisper_2"):

@@ -18,7 +18,7 @@ func _process(delta):
 	if timeSinceFired >= maxTime:
 		queue_free()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	await get_tree().create_timer(0.01).timeout
 	set_physics_process(false)
 

@@ -8,7 +8,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("whisper_1"):
 		$Skill1.scale.y = 1
 		$Skill2.scale.y = 0
