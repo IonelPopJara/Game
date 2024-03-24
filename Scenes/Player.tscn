@@ -75,7 +75,7 @@ shape = SubResource("RectangleShape2D_wwbbs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-2, 3)
-zoom = Vector2(0.75, 0.75)
+zoom = Vector2(0.45, 0.45)
 
 [node name="Whisper Gun" parent="." instance=ExtResource("3_vnob7")]
 

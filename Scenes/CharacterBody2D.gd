@@ -13,6 +13,9 @@ func _process(delta):
 		$AnimationPlayer.play("whisper")
 	else:
 		$AnimationPlayer.play("idle")
+		
+	if Input.is_action_pressed("restart"):
+		die()
 
 func _physics_process(delta):
 	# Add the gravity.
