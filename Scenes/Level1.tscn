@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://jyg5dwj5xe7s"]
+[gd_scene load_steps=7 format=3 uid="uid://jyg5dwj5xe7s"]
 
 [ext_resource type="Texture2D" uid="uid://xex8qp4dqqbn" path="res://Sprites/palette.png" id="1_rn7yf"]
 [ext_resource type="PackedScene" uid="uid://c4w1ktg8blxt6" path="res://Scenes/Player.tscn" id="2_0babs"]
@@ -47,6 +47,9 @@ texture_region_size = Vector2i(160, 160)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_m285q")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56vta"]
+size = Vector2(13891.5, 863)
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(-26, 0)
 
@@ -61,3 +64,12 @@ position = Vector2(1503, 488)
 
 [node name="Movable Block2" parent="." instance=ExtResource("3_5u8mb")]
 position = Vector2(942, 488)
+
+[node name="KillArea2D" type="Area2D" parent="."]
+position = Vector2(-4575, 1176)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillArea2D"]
+position = Vector2(5882, 334)
+shape = SubResource("RectangleShape2D_56vta")
+
+[connection signal="body_entered" from="KillArea2D" to="CharacterBody2D" method="_on_kill_area_2d_body_entered"]

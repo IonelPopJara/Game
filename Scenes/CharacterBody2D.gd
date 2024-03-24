@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal hit
+
 const SPEED = 600.0
 const JUMP_VELOCITY = -1000.0
 const MAX_JUMP_DELAY = 0.2
@@ -19,6 +21,9 @@ func _process(delta):
 		$AnimationPlayer.play("whisper")
 	else:
 		$AnimationPlayer.play("idle")
+		
+	if Input.is_action_pressed("restart"):
+		die()
 
 func _physics_process(delta):
 	elapsedTimeSinceJump += delta
@@ -53,6 +58,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+
 func applyGravity(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -69,3 +75,11 @@ func applyGravity(delta):
 func jump():
 	elapsedTimeSinceJump = MAX_JUMP_DELAY
 	velocity.y = JUMP_VELOCITY	
+
+func die():
+	hit.emit()
+	get_tree().reload_current_scene()
+
+func _on_kill_area_2d_body_entered(body):
+	die() # Replace with function body.
+
