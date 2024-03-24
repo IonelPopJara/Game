@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://jyg5dwj5xe7s"]
+[gd_scene load_steps=8 format=3 uid="uid://jyg5dwj5xe7s"]
 
 [ext_resource type="Texture2D" uid="uid://xex8qp4dqqbn" path="res://Sprites/palette.png" id="1_rn7yf"]
 [ext_resource type="PackedScene" uid="uid://c4w1ktg8blxt6" path="res://Scenes/Player.tscn" id="2_0babs"]
 [ext_resource type="PackedScene" uid="uid://dkaua2vestj0o" path="res://Scenes/movable_block.tscn" id="3_5u8mb"]
+[ext_resource type="AudioStream" uid="uid://cqm8255lxtopr" path="res://Sprites/bgMusic.mp3" id="4_m2uin"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m285q"]
 resource_name = "atlas1"
@@ -71,5 +72,10 @@ position = Vector2(-4575, 1176)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillArea2D"]
 position = Vector2(5882, 334)
 shape = SubResource("RectangleShape2D_56vta")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_m2uin")
+volume_db = -5.622
+autoplay = true
 
 [connection signal="body_entered" from="KillArea2D" to="CharacterBody2D" method="_on_kill_area_2d_body_entered"]
