@@ -20,9 +20,9 @@ func _ready():
 func _process(_delta):
 	
 	if Input.is_action_just_pressed("whisper_1"):
-		bulletType = 0
+		bulletType = 1
 	elif Input.is_action_just_pressed("whisper_2"):
-		bulletType = 1		
+		bulletType = 0		
 	elif Input.is_action_just_pressed("whisper_3"):
 		bulletType = 2		
 	
