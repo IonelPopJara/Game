@@ -6,6 +6,9 @@ var move_up_speed = 100
 var move_up_duration = 2.0
 var selected_whisper = 1
 
+var Slide = preload("res://Sprites/slide.wav")
+var Growth = preload("res://Sprites/box_growth.wav")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -41,8 +44,12 @@ func liftBlock():
 	
 func pushBlock(direction):
 	apply_central_impulse(direction * 0.5)
+	$AudioStreamPlayer.stream = Slide
+	$AudioStreamPlayer.play()
 	
 func growBlock():
 	if($Sprite2D.scale.x < MAX_SIZE):
 		$Sprite2D.scale *= 1.05
 		$CollisionShape2D.scale *= 1.05
+		$AudioStreamPlayer.stream = Growth
+		$AudioStreamPlayer.play()
