@@ -32,7 +32,7 @@ text = "Start"
 [node name="How To Play Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_lojdr")
-text = "How To Play"
+text = "Credits"
 
 [node name="Quit Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2

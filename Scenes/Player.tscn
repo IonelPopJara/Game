@@ -166,28 +166,6 @@ scale = Vector2(1.96992, 1.99)
 texture = ExtResource("7_k6wfx")
 hframes = 3
 
-[node name="PauseMenu" type="VBoxContainer" parent="Camera2D"]
-visible = false
-offset_left = -258.0
-offset_top = -359.0
-offset_right = 270.0
-offset_bottom = 178.0
-script = ExtResource("7_d5eie")
-
-[node name="QuitButton" type="Button" parent="Camera2D/PauseMenu"]
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-theme = ExtResource("8_i7ai3")
-theme_override_font_sizes/font_size = 120
-text = "Quit"
-
-[node name="CancelButton" type="Button" parent="Camera2D/PauseMenu"]
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-theme = ExtResource("8_i7ai3")
-theme_override_font_sizes/font_size = 120
-text = "Cancel"
-
 [node name="Whisper Gun" parent="." instance=ExtResource("3_vnob7")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -199,6 +177,3 @@ libraries = {
 volume_db = -10.0
 pitch_scale = 0.8
 max_polyphony = 1000
-
-[connection signal="pressed" from="Camera2D/PauseMenu/QuitButton" to="Camera2D/PauseMenu" method="_on_quit_button_pressed"]
-[connection signal="pressed" from="Camera2D/PauseMenu/CancelButton" to="Camera2D/PauseMenu" method="_on_cancel_button_pressed"]

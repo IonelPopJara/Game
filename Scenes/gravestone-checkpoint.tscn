@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://da2pd6f26iges"]
+[gd_scene load_steps=5 format=3 uid="uid://dt1iawi0iswtg"]
 
 [ext_resource type="Texture2D" uid="uid://xex8qp4dqqbn" path="res://Sprites/palette.png" id="1_8qv4n"]
 [ext_resource type="Script" path="res://Scenes/gravestone-checkpoint.gd" id="1_fp4tr"]
