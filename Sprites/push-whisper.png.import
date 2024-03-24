@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpyjyli28ep05"
-path="res://.godot/imported/minecraft.jpg-5f1f4a0d78fcdb322208fabca35c395d.ctex"
+uid="uid://cpta6li0emtek"
+path="res://.godot/imported/push-whisper.png-77d037f435638093f3f461635980e775.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/minecraft.jpg"
-dest_files=["res://.godot/imported/minecraft.jpg-5f1f4a0d78fcdb322208fabca35c395d.ctex"]
+source_file="res://Sprites/push-whisper.png"
+dest_files=["res://.godot/imported/push-whisper.png-77d037f435638093f3f461635980e775.ctex"]
 
 [params]
 
