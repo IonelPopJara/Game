@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bcblanbpok8x0" path="res://Sprites/skill3.png" id="6_uvjqq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwbbs"]
-size = Vector2(179, 196.5)
+size = Vector2(170, 178)
 
 [sub_resource type="Animation" id="Animation_ytedp"]
 tracks/0/type = "value"
@@ -74,7 +74,7 @@ hframes = 2
 vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4.5, -8.75)
+position = Vector2(5, -5)
 shape = SubResource("RectangleShape2D_wwbbs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
