@@ -24,5 +24,5 @@ func next_level():
 	var next_scene_number = int(scene_name.get_slice("Level", 1)) + 1
 	print("Go from " + scene_name + " to " + str(next_scene_number))
 	
-	if (next_scene_number < 5):
+	if (next_scene_number < 6):
 			get_tree().change_scene_to_file("res://Scenes/Level" + str(next_scene_number) + ".tscn")

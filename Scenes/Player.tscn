@@ -1,9 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://c4w1ktg8blxt6"]
+[gd_scene load_steps=18 format=3 uid="uid://c4w1ktg8blxt6"]
 
 [ext_resource type="Script" path="res://Scenes/CharacterBody2D.gd" id="1_rkpo7"]
 [ext_resource type="Texture2D" uid="uid://j16w8iyg54px" path="res://Sprites/ghost-spritesheet.png" id="2_eujfl"]
 [ext_resource type="Script" path="res://Scenes/Camera2D.gd" id="3_js3no"]
 [ext_resource type="PackedScene" uid="uid://d07a3jnhre3n2" path="res://Scenes/whisper_gun.tscn" id="3_vnob7"]
+[ext_resource type="Script" path="res://Scenes/PauseMenu.gd" id="5_7xbbd"]
+[ext_resource type="Theme" uid="uid://dt0yw1bsqp5q6" path="res://Fonts/Themes/menu.tres" id="6_vlla6"]
 [ext_resource type="Texture2D" uid="uid://crte0gkotep4p" path="res://Sprites/whisper-ui.png" id="7_k6wfx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwbbs"]
@@ -164,6 +166,26 @@ scale = Vector2(1.96992, 1.99)
 texture = ExtResource("7_k6wfx")
 hframes = 3
 
+[node name="PauseMenu" type="VBoxContainer" parent="Camera2D"]
+visible = false
+offset_left = -257.0
+offset_top = -343.0
+offset_right = 289.0
+offset_bottom = 20.0
+script = ExtResource("5_7xbbd")
+
+[node name="QuitButton" type="Button" parent="Camera2D/PauseMenu"]
+layout_mode = 2
+theme = ExtResource("6_vlla6")
+theme_override_font_sizes/font_size = 120
+text = "QUIT"
+
+[node name="CancelButton" type="Button" parent="Camera2D/PauseMenu"]
+layout_mode = 2
+theme = ExtResource("6_vlla6")
+theme_override_font_sizes/font_size = 120
+text = "CANCEL"
+
 [node name="Whisper Gun" parent="." instance=ExtResource("3_vnob7")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -175,3 +197,6 @@ libraries = {
 volume_db = -10.0
 pitch_scale = 0.8
 max_polyphony = 1000
+
+[connection signal="pressed" from="Camera2D/PauseMenu/QuitButton" to="Camera2D/PauseMenu" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Camera2D/PauseMenu/CancelButton" to="Camera2D/PauseMenu" method="_on_cancel_button_pressed"]
