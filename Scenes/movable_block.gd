@@ -9,9 +9,13 @@ var selected_whisper = 1
 var Slide = preload("res://Sprites/slide.wav")
 var Growth = preload("res://Sprites/box_growth.wav")
 
+var canLift = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	contact_monitor = true
+	max_contacts_reported = 2
+	canLift = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -32,6 +36,8 @@ func whisperAction(direction):
 			growBlock()
 	
 func liftBlock():
+	if !canLift:
+		return
 	# Deactivate gravity
 	gravity_scale = 0.0
 	# Apply upward velocity
@@ -53,3 +59,13 @@ func growBlock():
 		$CollisionShape2D.scale *= 1.05
 		$AudioStreamPlayer.stream = Growth
 		$AudioStreamPlayer.play()
+
+func _on_area_2d_body_entered(body):
+	if body is CharacterBody2D:
+		canLift = false
+		print("Player is stepping on the cube")
+
+func _on_area_2d_body_exited(body):
+	if body is CharacterBody2D:
+		canLift = true
+		print("Player is no longer stepping on the cube")
