@@ -104,6 +104,6 @@ libraries = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_d8xdr")
-volume_db = -11.243
+volume_db = -4.674
 pitch_scale = 0.75
 max_polyphony = 1000
