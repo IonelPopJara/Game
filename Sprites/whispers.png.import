@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3b6ahssdkd3c"
-path="res://.godot/imported/ghost.png-629dea890c1035cb9bccdfe41c8f17a5.ctex"
+uid="uid://cx48mc32g3mme"
+path="res://.godot/imported/whispers.png-6a2664e12451a79ed65b00e504c6e6f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/ghost.png"
-dest_files=["res://.godot/imported/ghost.png-629dea890c1035cb9bccdfe41c8f17a5.ctex"]
+source_file="res://Sprites/whispers.png"
+dest_files=["res://.godot/imported/whispers.png-6a2664e12451a79ed65b00e504c6e6f1.ctex"]
 
 [params]
 

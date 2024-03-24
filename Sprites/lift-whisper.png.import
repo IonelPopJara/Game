@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqlisa2spu8j3"
-path="res://.godot/imported/kirby-small.png-53729034859c96c1c18cf0becfb81014.ctex"
+uid="uid://bppjtfbkihf2d"
+path="res://.godot/imported/lift-whisper.png-35dde9b36a4d35a6795efcf328d33d87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/kirby-small.png"
-dest_files=["res://.godot/imported/kirby-small.png-53729034859c96c1c18cf0becfb81014.ctex"]
+source_file="res://Sprites/lift-whisper.png"
+dest_files=["res://.godot/imported/lift-whisper.png-35dde9b36a4d35a6795efcf328d33d87.ctex"]
 
 [params]
 
