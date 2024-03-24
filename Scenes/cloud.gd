@@ -10,5 +10,5 @@ func _process(delta):
 	# Move cloud from left to right
 	position.x += speed * delta
 	# If cloud moves off-screen to the right, remove it
-	if position.x > get_viewport_rect().size.x:
+	if position.x > 10000:
 		queue_free()
