@@ -4,11 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://j16w8iyg54px" path="res://Sprites/ghost-spritesheet.png" id="2_eujfl"]
 [ext_resource type="Script" path="res://Scenes/Camera2D.gd" id="3_js3no"]
 [ext_resource type="PackedScene" uid="uid://d07a3jnhre3n2" path="res://Scenes/whisper_gun.tscn" id="3_vnob7"]
-[ext_resource type="Texture2D" uid="uid://bwppug44tecuv" path="res://Sprites/skill2.png" id="5_auat7"]
-[ext_resource type="Texture2D" uid="uid://uvlkd64a47e0" path="res://Sprites/skill1.png" id="5_ufhqs"]
-[ext_resource type="Texture2D" uid="uid://bcblanbpok8x0" path="res://Sprites/skill3.png" id="6_uvjqq"]
-[ext_resource type="Script" path="res://Scenes/PauseMenu.gd" id="7_d5eie"]
-[ext_resource type="Theme" uid="uid://dt0yw1bsqp5q6" path="res://Fonts/Themes/menu.tres" id="8_i7ai3"]
 [ext_resource type="Texture2D" uid="uid://crte0gkotep4p" path="res://Sprites/whisper-ui.png" id="7_k6wfx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwbbs"]
@@ -169,28 +164,6 @@ scale = Vector2(1.96992, 1.99)
 texture = ExtResource("7_k6wfx")
 hframes = 3
 
-[node name="PauseMenu" type="VBoxContainer" parent="Camera2D"]
-visible = false
-offset_left = -258.0
-offset_top = -359.0
-offset_right = 270.0
-offset_bottom = 178.0
-script = ExtResource("7_d5eie")
-
-[node name="QuitButton" type="Button" parent="Camera2D/PauseMenu"]
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-theme = ExtResource("8_i7ai3")
-theme_override_font_sizes/font_size = 120
-text = "Quit"
-
-[node name="CancelButton" type="Button" parent="Camera2D/PauseMenu"]
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-theme = ExtResource("8_i7ai3")
-theme_override_font_sizes/font_size = 120
-text = "Cancel"
-
 [node name="Whisper Gun" parent="." instance=ExtResource("3_vnob7")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -202,6 +175,3 @@ libraries = {
 volume_db = -10.0
 pitch_scale = 0.8
 max_polyphony = 1000
-
-[connection signal="pressed" from="Camera2D/PauseMenu/QuitButton" to="Camera2D/PauseMenu" method="_on_quit_button_pressed"]
-[connection signal="pressed" from="Camera2D/PauseMenu/CancelButton" to="Camera2D/PauseMenu" method="_on_cancel_button_pressed"]
