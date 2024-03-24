@@ -21,6 +21,9 @@ var selectedWhisper = 1
 func _init():
 	elapsedTimeSinceJump = MAX_JUMP_DELAY
 
+func _ready():
+	$AudioStreamPlayer.stream = Whisper1
+	
 func _process(_delta):
 	if Input.is_action_just_pressed("whisper_1"):
 		$AudioStreamPlayer.stream = Whisper1
