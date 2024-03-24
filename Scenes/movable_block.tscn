@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkaua2vestj0o"]
+[gd_scene load_steps=7 format=3 uid="uid://dkaua2vestj0o"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://cvkx37j2rx1os" path="res://Materials/block.tres" id="1_idx4u"]
 [ext_resource type="Script" path="res://Scenes/movable_block.gd" id="1_o4mst"]
 [ext_resource type="Texture2D" uid="uid://xex8qp4dqqbn" path="res://Sprites/palette.png" id="2_5frms"]
 
@@ -10,7 +11,11 @@ region = Rect2(360, 0, 160, 160)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27jrk"]
 size = Vector2(51.8333, 52.4167)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wo365"]
+size = Vector2(178, 180)
+
 [node name="Movable Block" type="RigidBody2D"]
+physics_material_override = ExtResource("1_idx4u")
 script = ExtResource("1_o4mst")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -21,3 +26,16 @@ texture = SubResource("AtlasTexture_r6hms")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_27jrk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+pitch_scale = 0.8
+max_polyphony = 1000
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_wo365")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
