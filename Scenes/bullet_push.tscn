@@ -1,22 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dd6wh14eaux1g"]
+[gd_scene load_steps=4 format=3 uid="uid://boru5a50kg8tt"]
 
-[ext_resource type="Script" path="res://Scenes/bullet.gd" id="1_7w6rj"]
-[ext_resource type="Texture2D" uid="uid://duoxigcpkp1ey" path="res://Sprites/sound.png" id="2_m8owg"]
+[ext_resource type="Script" path="res://Scenes/bullet.gd" id="1_xkkap"]
+[ext_resource type="Texture2D" uid="uid://cpta6li0emtek" path="res://Sprites/push-whisper.png" id="2_od3ra"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ga110"]
 size = Vector2(50, 50)
 
 [node name="Bullet" type="Area2D"]
-script = ExtResource("1_7w6rj")
+script = ExtResource("1_xkkap")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.6, 1.6)
-texture = ExtResource("2_m8owg")
+scale = Vector2(2.855, 2.855)
+texture = ExtResource("2_od3ra")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-scale = Vector2(2.5, 2.5)
+scale = Vector2(4.19, 4.19)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.725, 1.725)
 shape = SubResource("RectangleShape2D_ga110")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
