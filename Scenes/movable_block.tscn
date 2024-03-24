@@ -1,5 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dkaua2vestj0o"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://cvkx37j2rx1os" path="res://Materials/block.tres" id="1_idx4u"]
 [ext_resource type="Script" path="res://Scenes/movable_block.gd" id="1_o4mst"]
 [ext_resource type="Texture2D" uid="uid://xex8qp4dqqbn" path="res://Sprites/palette.png" id="2_5frms"]
 [ext_resource type="AudioStream" uid="uid://ds7o6jtw08q3a" path="res://Sprites/slide.wav" id="3_2t3ek"]
@@ -12,6 +13,7 @@ region = Rect2(360, 0, 160, 160)
 size = Vector2(51.8333, 52.4167)
 
 [node name="Movable Block" type="RigidBody2D"]
+physics_material_override = ExtResource("1_idx4u")
 script = ExtResource("1_o4mst")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

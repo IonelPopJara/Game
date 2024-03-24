@@ -43,7 +43,7 @@ func liftBlock():
 	linear_velocity.y = 0
 	
 func pushBlock(direction):
-	apply_central_impulse(direction)
+	apply_central_impulse(direction * 0.5)
 	$AudioStreamPlayer.stream = Slide
 	$AudioStreamPlayer.play()
 	

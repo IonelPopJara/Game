@@ -79,8 +79,9 @@ position = Vector2(5, -5)
 shape = SubResource("RectangleShape2D_wwbbs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-2, 3)
-zoom = Vector2(0.45, 0.45)
+z_index = 100
+position = Vector2(0, -50)
+zoom = Vector2(0.7, 0.7)
 script = ExtResource("3_js3no")
 
 [node name="Skill1" type="Sprite2D" parent="Camera2D"]
