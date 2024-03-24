@@ -2,6 +2,10 @@ extends CharacterBody2D
 
 signal hit
 
+var Whisper1 = preload("res://Sprites/whisper1.wav")
+var Whisper2 = preload("res://Sprites/whisper2.wav")
+var Whisper3 = preload("res://Sprites/whisper3.wav")
+
 const SPEED = 600.0
 const JUMP_VELOCITY = -1000.0
 const MAX_JUMP_DELAY = 0.2
@@ -12,13 +16,22 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 2
 
 var elapsedTimeSinceJump = 0.0
 var elapsedTimeSinceLastTouchedFloor = 0.0
+var selectedWhisper = 1
 
 func _init():
 	elapsedTimeSinceJump = MAX_JUMP_DELAY
 
 func _process(_delta):
+	if Input.is_action_just_pressed("whisper_1"):
+		$AudioStreamPlayer.stream = Whisper1
+	if Input.is_action_just_pressed("whisper_2"):
+		$AudioStreamPlayer.stream = Whisper2
+	if Input.is_action_just_pressed("whisper_3"):
+		$AudioStreamPlayer.stream = Whisper3
+		
 	if Input.is_action_pressed("fire"):
 		$AnimationPlayer.play("whisper")
+		$AudioStreamPlayer.play()
 	else:
 		$AnimationPlayer.play("idle")
 		

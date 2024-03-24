@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c4w1ktg8blxt6"]
+[gd_scene load_steps=14 format=3 uid="uid://c4w1ktg8blxt6"]
 
 [ext_resource type="Script" path="res://Scenes/CharacterBody2D.gd" id="1_rkpo7"]
 [ext_resource type="Texture2D" uid="uid://j16w8iyg54px" path="res://Sprites/ghost-spritesheet.png" id="2_eujfl"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bwppug44tecuv" path="res://Sprites/skill2.png" id="5_auat7"]
 [ext_resource type="Texture2D" uid="uid://uvlkd64a47e0" path="res://Sprites/skill1.png" id="5_ufhqs"]
 [ext_resource type="Texture2D" uid="uid://bcblanbpok8x0" path="res://Sprites/skill3.png" id="6_uvjqq"]
+[ext_resource type="AudioStream" uid="uid://cchrbiant8gfx" path="res://Sprites/whisper1.wav" id="8_d8xdr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwbbs"]
 size = Vector2(170, 178)
@@ -100,3 +101,9 @@ texture = ExtResource("6_uvjqq")
 libraries = {
 "": SubResource("AnimationLibrary_aoueu")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_d8xdr")
+volume_db = -11.243
+pitch_scale = 0.75
+max_polyphony = 1000

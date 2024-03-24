@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkaua2vestj0o"]
+[gd_scene load_steps=6 format=3 uid="uid://dkaua2vestj0o"]
 
 [ext_resource type="Script" path="res://Scenes/movable_block.gd" id="1_o4mst"]
 [ext_resource type="Texture2D" uid="uid://xex8qp4dqqbn" path="res://Sprites/palette.png" id="2_5frms"]
+[ext_resource type="AudioStream" uid="uid://ds7o6jtw08q3a" path="res://Sprites/slide.wav" id="3_2t3ek"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r6hms"]
 atlas = ExtResource("2_5frms")
@@ -21,3 +22,8 @@ texture = SubResource("AtlasTexture_r6hms")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_27jrk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2t3ek")
+volume_db = -13.117
+pitch_scale = 0.82
