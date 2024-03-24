@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://xex8qp4dqqbn" path="res://Sprites/palette.png" id="1_rn7yf"]
 [ext_resource type="PackedScene" uid="uid://c4w1ktg8blxt6" path="res://Scenes/Player.tscn" id="2_0babs"]
 [ext_resource type="PackedScene" uid="uid://dkaua2vestj0o" path="res://Scenes/movable_block.tscn" id="3_5u8mb"]
-[ext_resource type="PackedScene" uid="uid://da2pd6f26iges" path="res://Scenes/gravestone-checkpoint.tscn" id="4_dqbx7"]
+[ext_resource type="PackedScene" uid="uid://dt1iawi0iswtg" path="res://Scenes/gravestone-checkpoint.tscn" id="4_dqbx7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m285q"]
 resource_name = "atlas1"
