@@ -1,0 +1,136 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl168rqvv1oda"]
+
+[ext_resource type="Theme" uid="uid://dt0yw1bsqp5q6" path="res://Fonts/Themes/menu.tres" id="1_rgdrd"]
+[ext_resource type="Script" path="res://Scenes/back.gd" id="2_hji6q"]
+[ext_resource type="FontFile" uid="uid://cslq84cv1cvgq" path="res://Fonts/Stardew_Valley.ttf" id="2_n4itf"]
+
+[sub_resource type="GDScript" id="GDScript_648q3"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+	
+func _on_back_button_pressed():
+	get_tree().change_scene_to_file(\"res://Scenes/menu.tscn\") # Replace with function body.
+"
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_648q3")
+
+[node name="Back button" type="Button" parent="."]
+offset_left = 64.0
+offset_top = 942.0
+offset_right = 188.0
+offset_bottom = 1028.0
+focus_neighbor_bottom = NodePath("../Start Button")
+theme = ExtResource("1_rgdrd")
+text = "Back"
+script = ExtResource("2_hji6q")
+
+[node name="Game Jam" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -673.0
+offset_top = -453.0
+offset_right = 690.0
+offset_bottom = -335.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_n4itf")
+theme_override_font_sizes/font_size = 100
+text = "Created during the March Game Jam	"
+horizontal_alignment = 1
+
+[node name="Theme" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -681.0
+offset_top = -349.0
+offset_right = 682.0
+offset_bottom = -231.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_n4itf")
+theme_override_font_sizes/font_size = 75
+text = "Theme: \"Whispers of Change\""
+horizontal_alignment = 1
+
+[node name="Team" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -668.0
+offset_top = 1.0
+offset_right = 695.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_n4itf")
+theme_override_font_sizes/font_size = 62
+text = "Adrian Hassa: Sound Effects & Music
+Ionel Pop: Special Effects
+Teo Portase: 2D Assets, Animations"
+horizontal_alignment = 1
+
+[node name="Together" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -941.0
+offset_top = -165.0
+offset_right = 958.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_n4itf")
+theme_override_font_sizes/font_size = 75
+text = "We all worked on the game code and level design, with individual credit for:"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Stardew" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -685.0
+offset_top = 301.0
+offset_right = 710.0
+offset_bottom = 419.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_n4itf")
+theme_override_font_sizes/font_size = 60
+text = "Credits to Cowsplay for the Stardew Valley font."
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Back button" to="Back button" method="_on_pressed"]

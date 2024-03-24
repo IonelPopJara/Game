@@ -67,7 +67,7 @@ focus_neighbor_top = NodePath("../Quit Button")
 theme = ExtResource("2_lojdr")
 text = "Start"
 
-[node name="How To Play Button" type="Button" parent="VBoxContainer"]
+[node name="Credits Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_lojdr")
 text = "Credits"
@@ -78,7 +78,7 @@ focus_neighbor_bottom = NodePath("../Start Button")
 theme = ExtResource("2_lojdr")
 text = "Quit"
 
-[node name="Label" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -110,5 +110,5 @@ libraries = {
 }
 
 [connection signal="pressed" from="VBoxContainer/Start Button" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/How To Play Button" to="." method="_on_how_to_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits Button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit Button" to="." method="_on_quit_button_pressed"]
