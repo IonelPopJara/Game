@@ -10,7 +10,7 @@ var currentTime = 0.0
 func _process(delta):
 	currentTime += delta
 	
-	TIME_INTERVAL = randf_range(15, 50)
+	TIME_INTERVAL = randf_range(10, 20)
 	
 	if (currentTime >= TIME_INTERVAL):
 		currentTime = 0.0

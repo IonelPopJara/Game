@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bcavm0tp83q4h"]
+[gd_scene load_steps=12 format=3 uid="uid://bpyfadfef18vm"]
 
 [ext_resource type="Texture2D" uid="uid://xex8qp4dqqbn" path="res://Sprites/palette.png" id="1_3l3y0"]
 [ext_resource type="PackedScene" uid="uid://c4w1ktg8blxt6" path="res://Scenes/Player.tscn" id="2_qthv3"]
 [ext_resource type="PackedScene" uid="uid://dkaua2vestj0o" path="res://Scenes/movable_block.tscn" id="3_1own7"]
-[ext_resource type="PackedScene" uid="uid://dt1iawi0iswtg" path="res://Scenes/gravestone-checkpoint.tscn" id="4_oprvw"]
+[ext_resource type="PackedScene" uid="uid://da2pd6f26iges" path="res://Scenes/gravestone-checkpoint.tscn" id="4_oprvw"]
 [ext_resource type="PackedScene" uid="uid://53prsex33j4k" path="res://Scenes/spawner.tscn" id="5_6uk7h"]
 [ext_resource type="FontFile" uid="uid://cslq84cv1cvgq" path="res://Fonts/Stardew_Valley.ttf" id="5_k1uj7"]
 [ext_resource type="Script" path="res://Scenes/Label.gd" id="6_8k72h"]
@@ -146,7 +146,7 @@ autowrap_mode = 2
 script = ExtResource("6_8k72h")
 
 [node name="Spawner" parent="." instance=ExtResource("5_6uk7h")]
-position = Vector2(-1105, -185)
+position = Vector2(-863, -185)
 
 [connection signal="body_entered" from="KillArea2D" to="CharacterBody2D" method="_on_kill_area_2d_body_entered"]
 [connection signal="body_entered" from="MovementSign" to="MovementSign/Movement" method="_on_movement_sign_body_entered"]
