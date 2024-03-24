@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://jyg5dwj5xe7s"]
+[gd_scene load_steps=12 format=3 uid="uid://jyg5dwj5xe7s"]
 
 [ext_resource type="Texture2D" uid="uid://xex8qp4dqqbn" path="res://Sprites/palette.png" id="1_rn7yf"]
 [ext_resource type="PackedScene" uid="uid://c4w1ktg8blxt6" path="res://Scenes/Player.tscn" id="2_0babs"]
 [ext_resource type="PackedScene" uid="uid://dkaua2vestj0o" path="res://Scenes/movable_block.tscn" id="3_5u8mb"]
-[ext_resource type="PackedScene" uid="uid://dt1iawi0iswtg" path="res://Scenes/gravestone-checkpoint.tscn" id="4_dqbx7"]
+[ext_resource type="PackedScene" uid="uid://da2pd6f26iges" path="res://Scenes/gravestone-checkpoint.tscn" id="4_dqbx7"]
 [ext_resource type="FontFile" uid="uid://cslq84cv1cvgq" path="res://Fonts/Stardew_Valley.ttf" id="5_kjklh"]
 [ext_resource type="Script" path="res://Scenes/Label.gd" id="6_itmqb"]
+[ext_resource type="PackedScene" uid="uid://53prsex33j4k" path="res://Scenes/spawner.tscn" id="7_dmo2d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m285q"]
 resource_name = "atlas1"
@@ -106,6 +107,9 @@ text = "To exit/pause the game, press the Escape key."
 horizontal_alignment = 1
 autowrap_mode = 2
 script = ExtResource("6_itmqb")
+
+[node name="Spawner" parent="." instance=ExtResource("7_dmo2d")]
+position = Vector2(-657, -185)
 
 [connection signal="body_entered" from="KillArea2D" to="CharacterBody2D" method="_on_kill_area_2d_body_entered"]
 [connection signal="body_entered" from="PauseSign" to="PauseSign/Pause" method="_on_movement_sign_body_entered"]

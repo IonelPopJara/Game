@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ohtmlf2os8lq"]
+[gd_scene load_steps=9 format=3 uid="uid://0k0yhg83yepk"]
 
 [ext_resource type="Texture2D" uid="uid://xex8qp4dqqbn" path="res://Sprites/palette.png" id="1_ok3rm"]
 [ext_resource type="PackedScene" uid="uid://c4w1ktg8blxt6" path="res://Scenes/Player.tscn" id="2_kryl7"]
 [ext_resource type="PackedScene" uid="uid://dkaua2vestj0o" path="res://Scenes/movable_block.tscn" id="3_dm3lv"]
-[ext_resource type="PackedScene" uid="uid://dt1iawi0iswtg" path="res://Scenes/gravestone-checkpoint.tscn" id="4_2bd1d"]
+[ext_resource type="PackedScene" uid="uid://da2pd6f26iges" path="res://Scenes/gravestone-checkpoint.tscn" id="4_2bd1d"]
+[ext_resource type="PackedScene" uid="uid://53prsex33j4k" path="res://Scenes/spawner.tscn" id="5_yswha"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m285q"]
 resource_name = "atlas1"
@@ -78,5 +79,8 @@ shape = SubResource("RectangleShape2D_56vta")
 
 [node name="Gravestone" parent="." instance=ExtResource("4_2bd1d")]
 position = Vector2(851, -251)
+
+[node name="Spawner" parent="." instance=ExtResource("5_yswha")]
+position = Vector2(-891, -185)
 
 [connection signal="body_entered" from="KillArea2D" to="CharacterBody2D" method="_on_kill_area_2d_body_entered"]
