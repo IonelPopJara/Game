@@ -6,10 +6,21 @@ var initialScale = Vector2(1, 1)
 var timeSinceFired = 0.0
 var maxTime = 2.0  # Maximum time before bullet disappears
 
+var liftWhisper =  preload("res://Sprites/lift-whisper.png")
+var pushWhisper = preload("res://Sprites/push-whisper.png")
+var growWhisper = preload("res://Sprites/sound.png")
+
 func _ready():
 	top_level = true
 
 func _process(delta):
+	if Input.is_action_just_pressed("whisper_1"):
+		$AnimationPlayer.play("lift")
+	if Input.is_action_just_pressed("whisper_2"):
+		$AnimationPlayer.play("push")
+	if Input.is_action_just_pressed("whisper_3"):
+		$AnimationPlayer.play("grow")
+	
 	position += (Vector2.RIGHT*speed).rotated(rotation)*delta
 	
 	timeSinceFired += delta
