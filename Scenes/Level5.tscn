@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c337dm7hb5scx"]
+[gd_scene load_steps=11 format=3 uid="uid://c337dm7hb5scx"]
 
 [ext_resource type="Texture2D" uid="uid://xex8qp4dqqbn" path="res://Sprites/palette.png" id="1_15y0g"]
 [ext_resource type="PackedScene" uid="uid://c4w1ktg8blxt6" path="res://Scenes/Player.tscn" id="2_kg05p"]
 [ext_resource type="PackedScene" uid="uid://dkaua2vestj0o" path="res://Scenes/movable_block.tscn" id="3_tu8jn"]
 [ext_resource type="PackedScene" uid="uid://dt1iawi0iswtg" path="res://Scenes/gravestone-checkpoint.tscn" id="4_i8gtl"]
+[ext_resource type="FontFile" uid="uid://cslq84cv1cvgq" path="res://Fonts/Stardew_Valley.ttf" id="5_2uojm"]
+[ext_resource type="Script" path="res://Scenes/Label.gd" id="6_t6d5w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m285q"]
 resource_name = "atlas1"
@@ -51,7 +53,10 @@ sources/0 = SubResource("TileSetAtlasSource_m285q")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_56vta"]
 size = Vector2(13891.5, 863)
 
-[node name="Level4" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b03ak"]
+size = Vector2(242, 306)
+
+[node name="Level5" type="Node2D"]
 position = Vector2(-26, 0)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -79,4 +84,27 @@ shape = SubResource("RectangleShape2D_56vta")
 [node name="Gravestone" parent="." instance=ExtResource("4_i8gtl")]
 position = Vector2(1987, 265)
 
+[node name="WhisperSign" type="Area2D" parent="."]
+position = Vector2(731, 515)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WhisperSign"]
+position = Vector2(1252, -322)
+shape = SubResource("RectangleShape2D_b03ak")
+
+[node name="Whisper" type="Label" parent="WhisperSign"]
+offset_left = 1012.0
+offset_top = -656.0
+offset_right = 1504.0
+offset_bottom = -410.0
+theme_override_fonts/font = ExtResource("5_2uojm")
+theme_override_font_sizes/font_size = 58
+text = "Thank you for playing our demo! :)
+
+Have a cookie 🍪"
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("6_t6d5w")
+
 [connection signal="body_entered" from="KillArea2D" to="CharacterBody2D" method="_on_kill_area_2d_body_entered"]
+[connection signal="body_entered" from="WhisperSign" to="WhisperSign/Whisper" method="_on_movement_sign_body_entered"]
+[connection signal="body_exited" from="WhisperSign" to="WhisperSign/Whisper" method="_on_movement_sign_body_exited"]
